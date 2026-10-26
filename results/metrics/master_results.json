@@ -1,0 +1,145 @@
+{
+  "preprocessing_info": {
+    "n_samples_total": 395,
+    "n_features_raw": 33,
+    "n_features_after_encoding": 43,
+    "train_size": 275,
+    "val_size": 60,
+    "test_size": 60,
+    "random_seed": 42,
+    "class_order": [
+      "Low",
+      "Medium",
+      "High"
+    ],
+    "class_boundaries": {
+      "Low": [
+        0,
+        9
+      ],
+      "Medium": [
+        10,
+        14
+      ],
+      "High": [
+        15,
+        20
+      ]
+    },
+    "leakage_features_dropped": [
+      "G1",
+      "G2"
+    ],
+    "feature_names": [
+      "school",
+      "sex",
+      "age",
+      "address",
+      "famsize",
+      "Pstatus",
+      "Medu",
+      "Fedu",
+      "traveltime",
+      "studytime",
+      "failures",
+      "schoolsup",
+      "famsup",
+      "paid",
+      "activities",
+      "nursery",
+      "higher",
+      "internet",
+      "romantic",
+      "famrel",
+      "freetime",
+      "goout",
+      "Dalc",
+      "Walc",
+      "health",
+      "absences",
+      "Mjob_at_home",
+      "Mjob_health",
+      "Mjob_other",
+      "Mjob_services",
+      "Mjob_teacher",
+      "Fjob_at_home",
+      "Fjob_health",
+      "Fjob_other",
+      "Fjob_services",
+      "Fjob_teacher",
+      "reason_course",
+      "reason_home",
+      "reason_other",
+      "reason_reputation",
+      "guardian_father",
+      "guardian_mother",
+      "guardian_other"
+    ],
+    "g3_stats": {
+      "min": 0,
+      "max": 20,
+      "mean": 10.415189873417722,
+      "std": 4.5814426109978434
+    },
+    "class_counts_train": {
+      "Low": 51,
+      "Medium": 90,
+      "High": 134
+    },
+    "class_counts_val": {
+      "Low": 11,
+      "Medium": 20,
+      "High": 29
+    },
+    "class_counts_test": {
+      "Low": 11,
+      "Medium": 20,
+      "High": 29
+    }
+  },
+  "all_results": [
+    {
+      "name": "Majority-Class Baseline",
+      "accuracy": 0.48333333333333334,
+      "macro_f1": 0.21722846441947566,
+      "macro_recall": 0.3333333333333333,
+      "notes": "Predicts most frequent class only"
+    },
+    {
+      "name": "Logistic Regression",
+      "accuracy": 0.5166666666666667,
+      "macro_f1": 0.48394224733207786,
+      "macro_recall": 0.4832810867293626,
+      "notes": "Linear baseline, no hidden layers"
+    },
+    {
+      "name": "E1_Baseline_MLP",
+      "accuracy": 0.4166666666666667,
+      "macro_f1": 0.3936735778841041,
+      "macro_recall": 0.39033437826541273,
+      "notes": "Baseline: 2 hidden layers [64,32], lr=0.01, bs=32"
+    },
+    {
+      "name": "E2_Deeper_MLP",
+      "accuracy": 0.48333333333333334,
+      "macro_f1": 0.4202170963364993,
+      "macro_recall": 0.4207941483803553,
+      "notes": "Deeper arch: 3 hidden layers [128,64,32], lr=0.01, bs=32"
+    },
+    {
+      "name": "E3_HighLR_MLP",
+      "accuracy": 0.35,
+      "macro_f1": 0.28835899983440966,
+      "macro_recall": 0.2912225705329154,
+      "notes": "Higher LR: same arch as E1, lr=0.05, bs=32"
+    },
+    {
+      "name": "E4_SmallBatch_MLP",
+      "accuracy": 0.45,
+      "macro_f1": 0.34259259259259256,
+      "macro_recall": 0.3550156739811912,
+      "notes": "Smaller batch: same arch as E1, lr=0.01, bs=8"
+    }
+  ],
+  "best_experiment": "E2_Deeper_MLP"
+}

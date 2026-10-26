@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Majority-Class Baseline",
+    "accuracy": 0.48333333333333334,
+    "macro_f1": 0.21722846441947566,
+    "macro_recall": 0.3333333333333333,
+    "notes": "Predicts most frequent class only"
+  },
+  {
+    "name": "Logistic Regression",
+    "accuracy": 0.5166666666666667,
+    "macro_f1": 0.48394224733207786,
+    "macro_recall": 0.4832810867293626,
+    "notes": "Linear baseline, no hidden layers"
+  },
+  {
+    "name": "E1_Baseline_MLP",
+    "accuracy": 0.4166666666666667,
+    "macro_f1": 0.3936735778841041,
+    "macro_recall": 0.39033437826541273,
+    "notes": "Baseline: 2 hidden layers [64,32], lr=0.01, bs=32"
+  },
+  {
+    "name": "E2_Deeper_MLP",
+    "accuracy": 0.48333333333333334,
+    "macro_f1": 0.4202170963364993,
+    "macro_recall": 0.4207941483803553,
+    "notes": "Deeper arch: 3 hidden layers [128,64,32], lr=0.01, bs=32"
+  },
+  {
+    "name": "E3_HighLR_MLP",
+    "accuracy": 0.35,
+    "macro_f1": 0.28835899983440966,
+    "macro_recall": 0.2912225705329154,
+    "notes": "Higher LR: same arch as E1, lr=0.05, bs=32"
+  },
+  {
+    "name": "E4_SmallBatch_MLP",
+    "accuracy": 0.45,
+    "macro_f1": 0.34259259259259256,
+    "macro_recall": 0.3550156739811912,
+    "notes": "Smaller batch: same arch as E1, lr=0.01, bs=8"
+  }
+]
